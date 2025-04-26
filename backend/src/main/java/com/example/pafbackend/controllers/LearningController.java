@@ -122,7 +122,7 @@ public class LearningController {
         Optional<Learning> learning = learningRepository.findById(id);
         if (learning.isPresent()) {
             // Only allow deletion if the userId matches (security check)
-            if (!learning.get().getUserId().equals(userId)) {
+            if (!learning.get().getUserId().equals(userId)) { // Check user ownership before deleting
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             }
             learningRepository.deleteById(id);
