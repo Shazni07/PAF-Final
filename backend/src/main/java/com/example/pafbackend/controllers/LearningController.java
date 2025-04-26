@@ -117,7 +117,7 @@ public class LearningController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}") // Delete a learning entry by ID
     public ResponseEntity<Void> deleteLearning(@PathVariable String id, @RequestParam String userId) {
         Optional<Learning> learning = learningRepository.findById(id);
         if (learning.isPresent()) {
