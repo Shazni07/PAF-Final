@@ -126,7 +126,7 @@ public class LearningController {
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             }
             learningRepository.deleteById(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT); // Deletion successful
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
