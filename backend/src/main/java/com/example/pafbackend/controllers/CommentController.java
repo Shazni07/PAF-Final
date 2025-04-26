@@ -21,7 +21,7 @@ public class CommentController {
     @Autowired
     private UserRepository userRepository;
 
-    // POST: Create a new Comment
+    
     @PostMapping
     public Comment createComment(@RequestBody Comment comment) {
         return commentRepository.save(comment);
