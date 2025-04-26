@@ -110,7 +110,7 @@ public class LearningController {
             }
 
             // Save the updated learning entry
-            Learning savedLearning = learningRepository.save(existingLearning);
+            Learning savedLearning = learningRepository.save(existingLearning); // Save updated entry
             return new ResponseEntity<>(savedLearning, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Learning not found
