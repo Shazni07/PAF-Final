@@ -20,6 +20,7 @@ public class PostController {
         this.postRepository = postRepository;
     }
 
+      // ------------------ GET all Posts ------------------
 
 
     @GetMapping
