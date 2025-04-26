@@ -113,7 +113,7 @@ public class LearningController {
             Learning savedLearning = learningRepository.save(existingLearning);
             return new ResponseEntity<>(savedLearning, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Learning not found
         }
     }
 
