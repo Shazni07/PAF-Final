@@ -102,6 +102,8 @@ public class LearningController {
             if (updatedLearning.getResult() != null) {
                 existingLearning.setResult(updatedLearning.getResult());
             }
+
+            // Update workshop-related fields
             if (updatedLearning.getWorkshopName() != null) {
                 existingLearning.setWorkshopName(updatedLearning.getWorkshopName());
             }
