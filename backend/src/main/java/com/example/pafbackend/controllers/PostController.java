@@ -25,7 +25,7 @@ public class PostController {
 
     @GetMapping
     public ResponseEntity<List<Post>> getPosts() {
-        List<Post> posts = postRepository.findAll();
+        List<Post> posts = postRepository.findAll();// Fetch all posts from DB
         return new ResponseEntity<>(posts, HttpStatus.OK);
     }
 
