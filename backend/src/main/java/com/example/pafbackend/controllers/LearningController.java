@@ -96,6 +96,8 @@ public class LearningController {
             if (updatedLearning.getDateObtained() != null) {
                 existingLearning.setDateObtained(updatedLearning.getDateObtained());
             }
+
+            // Update challenge-related fields
             if (updatedLearning.getChallengeName() != null) {
                 existingLearning.setChallengeName(updatedLearning.getChallengeName());
             }
