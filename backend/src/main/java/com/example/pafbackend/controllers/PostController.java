@@ -37,6 +37,9 @@ public class PostController {
         return new ResponseEntity<>(posts, HttpStatus.OK);// Return with status 200 OK
     }
 
+
+      // ------------------ CREATE a New Post ------------------
+
     @PostMapping
     public ResponseEntity<Post> createPost(@RequestBody Post post) {
         Post savedPost = postRepository.save(post);
