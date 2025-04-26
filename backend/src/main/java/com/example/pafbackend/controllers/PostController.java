@@ -40,6 +40,11 @@ public class PostController {
         return new ResponseEntity<>(savedPost, HttpStatus.CREATED);
     }
 
+
+
+    // Implementing the CRUD Function
+
+
     @DeleteMapping("/{postId}")
     public ResponseEntity<Void> deletePost(@PathVariable String postId) {
         postRepository.deleteById(postId);
