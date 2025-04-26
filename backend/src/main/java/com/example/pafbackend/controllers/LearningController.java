@@ -38,7 +38,7 @@ public class LearningController {
         return new ResponseEntity<>(savedLearning, HttpStatus.CREATED);
     }
 
-    @GetMapping("/entry/{id}")
+    @GetMapping("/entry/{id}") // Get a single learning entry by ID
     public ResponseEntity<Learning> getLearningById(@PathVariable String id) {
         Optional<Learning> learning = learningRepository.findById(id);
         return learning.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
