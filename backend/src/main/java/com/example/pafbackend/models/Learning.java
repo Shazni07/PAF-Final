@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Setter
 @Document(collection = "learning")
 public class Learning {
-    @Id
+    @Id // Marks this field as the primary identifier for the MongoDB document
     private String id;
     private String userId;
     private String topic;
@@ -24,16 +24,16 @@ public class Learning {
     private String template;
 
     // Template-specific fields
-    private String projectName;         // For "Completed Project/Task"
-    private String projectLink;         // For "Completed Project/Task"
+    private String projectName; // For "Completed Project/Task"
+    private String projectLink; // For "Completed Project/Task"
 
-    private String certificationName;   // For "Certification/Qualification"
-    private String provider;            // For "Certification/Qualification" and "Workshops/Bootcamps"
-    private String dateObtained;        // For "Certification/Qualification"
+    private String certificationName; // For "Certification/Qualification"
+    private String provider; // For "Certification/Qualification" and "Workshops/Bootcamps"
+    private String dateObtained; // For "Certification/Qualification"
 
-    private String challengeName;       // For "Challenges/Competitions"
-    private String result;              // For "Challenges/Competitions"
+    private String challengeName; // For "Challenges/Competitions"
+    private String result; // For "Challenges/Competitions"
 
-    private String workshopName;        // For "Workshops/Bootcamps"
-    private String duration;            // For "Workshops/Bootcamps"
+    private String workshopName; // For "Workshops/Bootcamps"
+    private String duration; // For "Workshops/Bootcamps"
 }
