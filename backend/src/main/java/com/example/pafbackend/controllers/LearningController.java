@@ -128,7 +128,7 @@ public class LearningController {
             learningRepository.deleteById(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT); // Deletion successful
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Learning not found
         }
     }
 }
