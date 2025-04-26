@@ -28,7 +28,7 @@ public class LearningController {
         return new ResponseEntity<>(learningEntries, HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping // Create a new learning entry
     public ResponseEntity<Learning> createLearning(@RequestBody Learning learning) {
         // Set timestamp if not provided
         if (learning.getTimestamp() == null) {
