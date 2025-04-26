@@ -10,7 +10,7 @@ import java.util.Optional;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/posts")
+@RequestMapping("/api/posts") // Base URL for all endpoints in this controller
 public class PostController {
 
     private final PostRepository postRepository;
