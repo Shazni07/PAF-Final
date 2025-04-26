@@ -22,7 +22,7 @@ public class LearningController {
         this.learningRepository = learningRepository;
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("/{userId}") // Get all learning entries for a specific user
     public ResponseEntity<List<Learning>> getLearningByUserId(@PathVariable String userId) {
         List<Learning> learningEntries = learningRepository.findByUserId(userId);
         return new ResponseEntity<>(learningEntries, HttpStatus.OK);
@@ -50,12 +50,12 @@ public class LearningController {
         Optional<Learning> optionalLearning = learningRepository.findById(id);
         if (optionalLearning.isPresent()) {
             Learning existingLearning = optionalLearning.get();
-            
+
             // Only allow updates if the userId matches (security check)
             if (!existingLearning.getUserId().equals(updatedLearning.getUserId())) {
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             }
-            
+
             // Update fields if present in the request body
             if (updatedLearning.getTopic() != null) {
                 existingLearning.setTopic(updatedLearning.getTopic());
@@ -78,7 +78,7 @@ public class LearningController {
             if (updatedLearning.getTemplate() != null) {
                 existingLearning.setTemplate(updatedLearning.getTemplate());
             }
-            
+
             // Update template-specific fields
             if (updatedLearning.getProjectName() != null) {
                 existingLearning.setProjectName(updatedLearning.getProjectName());
@@ -107,7 +107,7 @@ public class LearningController {
             if (updatedLearning.getDuration() != null) {
                 existingLearning.setDuration(updatedLearning.getDuration());
             }
-            
+
             // Save the updated learning entry
             Learning savedLearning = learningRepository.save(existingLearning);
             return new ResponseEntity<>(savedLearning, HttpStatus.OK);
