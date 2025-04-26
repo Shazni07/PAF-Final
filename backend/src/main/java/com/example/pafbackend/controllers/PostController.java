@@ -41,10 +41,6 @@ public class PostController {
     }
 
 
-
-    // Implementing the CRUD Function
-
-
     @DeleteMapping("/{postId}")
     public ResponseEntity<Void> deletePost(@PathVariable String postId) {
         postRepository.deleteById(postId);
