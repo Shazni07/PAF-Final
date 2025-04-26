@@ -33,7 +33,7 @@ public class PostController {
 
     @GetMapping("/{userId}")
     public ResponseEntity<List<Post>> getPostsByUserId(@PathVariable String userId) {
-        List<Post> posts = postRepository.findByUserId(userId);
+        List<Post> posts = postRepository.findByUserId(userId); // Fetch posts created by specific user
         return new ResponseEntity<>(posts, HttpStatus.OK);
     }
 
