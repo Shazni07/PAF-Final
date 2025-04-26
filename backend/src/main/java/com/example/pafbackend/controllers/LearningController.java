@@ -45,6 +45,7 @@ public class LearningController {
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    // Update an existing learning entry
     @PutMapping("/{id}")
     public ResponseEntity<Learning> updateLearning(@PathVariable String id, @RequestBody Learning updatedLearning) {
         Optional<Learning> optionalLearning = learningRepository.findById(id);
