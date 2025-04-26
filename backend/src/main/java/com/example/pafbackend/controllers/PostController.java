@@ -26,7 +26,7 @@ public class PostController {
     @GetMapping
     public ResponseEntity<List<Post>> getPosts() {
         List<Post> posts = postRepository.findAll();// Fetch all posts from DB
-        return new ResponseEntity<>(posts, HttpStatus.OK);
+        return new ResponseEntity<>(posts, HttpStatus.OK);// Return with status 200 OK
     }
 
     @GetMapping("/{userId}")
