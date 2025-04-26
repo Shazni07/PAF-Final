@@ -29,6 +29,8 @@ public class PostController {
         return new ResponseEntity<>(posts, HttpStatus.OK);// Return with status 200 OK
     }
 
+     // ------------------ GET Posts by a Specific User ID ------------------
+
     @GetMapping("/{userId}")
     public ResponseEntity<List<Post>> getPostsByUserId(@PathVariable String userId) {
         List<Post> posts = postRepository.findByUserId(userId);
