@@ -11,7 +11,7 @@ spring:
     active: dev
   data:
     mongodb:
-      uri: mongodb+srv://izu99:TDsFSwDtJ7B1n8m5@cluster0.ghixis6.mongodb.net/oauthdb?retryWrites=true&w=majority&appName=Cluster0&ssl=true&tlsAllowInvalidCertificates=true
+      uri: mongodb+srv://PAFDBS:Paf*123@clusterdb.sukoonq.mongodb.net/?retryWrites=true&w=majority&appName=ClusterDB
       database: ${MONGODB_DB}
   security:
     oauth2:
