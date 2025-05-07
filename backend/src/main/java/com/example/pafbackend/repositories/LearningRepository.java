@@ -6,7 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Repository // Marks this interface as a Spring component for dependency injectio
+
 public interface LearningRepository extends MongoRepository<Learning, String> {
     List<Learning> findByUserId(String userId);
 }

@@ -96,12 +96,16 @@ public class LearningController {
             if (updatedLearning.getDateObtained() != null) {
                 existingLearning.setDateObtained(updatedLearning.getDateObtained());
             }
+
+            // Update challenge-related fields
             if (updatedLearning.getChallengeName() != null) {
                 existingLearning.setChallengeName(updatedLearning.getChallengeName());
             }
             if (updatedLearning.getResult() != null) {
                 existingLearning.setResult(updatedLearning.getResult());
             }
+
+            // Update workshop-related fields
             if (updatedLearning.getWorkshopName() != null) {
                 existingLearning.setWorkshopName(updatedLearning.getWorkshopName());
             }
@@ -110,10 +114,10 @@ public class LearningController {
             }
 
             // Save the updated learning entry
-            Learning savedLearning = learningRepository.save(existingLearning);
+            Learning savedLearning = learningRepository.save(existingLearning); // Save updated entry
             return new ResponseEntity<>(savedLearning, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Learning not found
         }
     }
 
@@ -122,13 +126,13 @@ public class LearningController {
         Optional<Learning> learning = learningRepository.findById(id);
         if (learning.isPresent()) {
             // Only allow deletion if the userId matches (security check)
-            if (!learning.get().getUserId().equals(userId)) {
+            if (!learning.get().getUserId().equals(userId)) { // Check user ownership before deleting
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             }
             learningRepository.deleteById(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT); // Deletion successful
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Learning not found
         }
     }
 }
